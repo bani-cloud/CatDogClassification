@@ -40,12 +40,12 @@ train_datagen = ImageDataGenerator(rescale = 1./255,
                                    horizontal_flip = True)
 test_datagen = ImageDataGenerator(rescale = 1./255)
 
-training_set = train_datagen.flow_from_directory('/Users/sudhanshukumar/Downloads/PetImages-20190330T113641Z-001/PetImages',
+training_set = train_datagen.flow_from_directory('/Users/Downloads/',
                                                  target_size = (64, 64),
                                                  batch_size = 32,
                                                  class_mode = 'binary')
 
-test_set = test_datagen.flow_from_directory('/Users/sudhanshukumar/Downloads/PetImages-20190330T113641Z-001/PetImages',
+test_set = test_datagen.flow_from_directory('/Users/Downloads/',
                                             target_size = (64, 64),
                                             batch_size = 32,
                                             class_mode = 'binary')
@@ -66,7 +66,7 @@ print("Saved model to disk")
 
 import numpy as np
 from keras.preprocessing import image
-test_image = image.load_img('/Users/sudhanshukumar/Downloads/cat.11.jpg', target_size = (64, 64))
+test_image = image.load_img('/Users/Downloads/cat.11.jpg', target_size = (64, 64))
 test_image = image.img_to_array(test_image)
 test_image = np.expand_dims(test_image, axis = 0)
 result = model.predict(test_image)
