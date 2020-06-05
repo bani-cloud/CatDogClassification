@@ -37,8 +37,8 @@ def predictRoute():
     return jsonify(result)
 
 
-#port = int(os.getenv("PORT"))
+#port = int(os.getenv("PORT")) #uncomment for cloud deployment
 if __name__ == "__main__":
     clApp = ClientApp()
-    #app.run(host='0.0.0.0', port=port)
-    app.run(host='0.0.0.0', port=8000, debug=True)
+    #app.run(host='0.0.0.0', port=port) #uncomment for cloud deployment
+    app.run(host='0.0.0.0', port=8000, debug=True)  #comment this line when deploying for cloud
